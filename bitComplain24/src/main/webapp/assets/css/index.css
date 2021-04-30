@@ -1,0 +1,58 @@
+
+.positionHead{
+    max-width: 1200px;
+    min-width: 1200px;
+    margin:0 auto;
+    margin-top: -15px;
+}
+
+.positionBody{
+        max-width: 1200px;
+        margin:0 auto;
+}
+
+a {
+    display: inline-block;
+    transition: .3s;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    text-decoration: none;
+    color: #000000;
+}
+           
+a:hover {                
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);                
+    text-decoration: underline;
+}
+            
+#ulStyle{                
+    margin-left: 300px;    
+    padding: 10px;    
+    width: 1300px;    
+    height: 70px;    
+}
+            
+#liStyle{
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: bold;
+    font-size: 25px;
+    list-style:none;
+    float: left;
+    padding:0px;
+}           
+
+            
+#btn{
+    background-color: #edf1f8;
+    width: 80px;
+    height: 40px;
+    border: 1px solid darkgray;
+    outline: none;    
+}
+     
+#btn:hover{
+    text-decoration:none;
+    background: gray;
+    color: white;
+}
