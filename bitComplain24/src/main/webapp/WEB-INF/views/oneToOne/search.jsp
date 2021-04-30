@@ -67,7 +67,7 @@
                 	<c:forEach items="${list }" var="vo" varStatus="status">
 		                <tr style="border-bottom:1px solid #d3d3d3;">
 		                    <td style="text-align:center; padding-left:-5px; width:68px">${vo.no }</td>
-		                    <td><a id = "defaultUp" href="${pageContext.request.contextPath }/oneToOne/detail/title=${vo.title }/regdate=${vo.regdate }">${vo.title }</a></td>
+		                    <td><a id = "defaultUp" href="postForm.html">${vo.title }</a></td>
 		                    <td style="text-align:center;">${vo.writer}</td>
 		                    <td style="text-align:center;">${vo.regdate }</td>
 		                    <td style="text-align:center;"><input id = "btn" type="button" value="수정" onclick="location.href='${pageContext.servletContext.contextPath}/oneToOne/modify'" style="background-color: red;"></td>
@@ -106,7 +106,7 @@
 						<li>
 						<c:choose>
 							<c:when test="${startNum > 1}">
-								<a href="${pageContext.request.contextPath }/oneToOne/${startNum-1}" >◀</a>
+								<a href="${pageContext.request.contextPath }/oneToOne/search/${startNum-1}" >◀</a>
 							</c:when>
 							<c:otherwise>
 								<span onclick="alert('이전 페이지가 없습니다.');">◀</span>
@@ -115,13 +115,13 @@
 						</li>
 						<c:forEach var="i" begin="0" end="4">
 							<li>
-								<a href="${pageContext.request.contextPath }/oneToOne/${startNum+i}">${startNum+i}</a>
+								<a href="${pageContext.request.contextPath }/oneToOne/search/${startNum+i}">${startNum+i}</a>
 							</li>
 						</c:forEach>
 						<li>
 							<c:choose>
 								<c:when test="${startNum+4<lastNum}">
-									<a href="${pageContext.request.contextPath }/oneToOne/${startNum+i}">▶</a>
+									<a href="${pageContext.request.contextPath }/oneToOne/search/${startNum+i}">▶</a>
 								</c:when>
 								<c:otherwise>
 									<span onclick="alert('다음 페이지가 없습니다.');">▶</span>

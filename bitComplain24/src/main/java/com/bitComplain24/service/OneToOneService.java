@@ -14,8 +14,13 @@ public class OneToOneService {
 	@Autowired
 	private OneToOneRepository oneToOneRepository; 
 	
-	public List<OneToOneVo> findAll() {
-		return oneToOneRepository.findAll();
+	public List<OneToOneVo> findAll(int page) {
+		return oneToOneRepository.findAll(page);
+		
+	}
+	
+	public List<OneToOneVo> search(String searchOption, String keyword, int page) {
+		return oneToOneRepository.search(searchOption, keyword, page);
 		
 	}
 
