@@ -17,7 +17,7 @@
 						from onetoone
 						order by regdate desc 
 						) as N1
-					WHERE (@rownum:=0)=0 
+					WHERE (@rownum:=0)=0 and writer= #{nickname }
 				) as N2
 			where num between #{start } and #{end }
 		]]>
@@ -50,4 +50,13 @@
 				where num between #{start } and #{end }
 			]]>
 	</select>
+	
+	<insert id="write" parameterType="onetoonevo">
+		<![CDATA[
+			insert into bitcomplain24.onetoone
+			values(null, #{title }, #{content }, #{writer }, now())
+		]]>
+	</insert>
+	
+	
 </mapper>

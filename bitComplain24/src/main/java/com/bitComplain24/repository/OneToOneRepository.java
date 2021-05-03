@@ -16,19 +16,13 @@ public class OneToOneRepository {
 	@Autowired
 	private SqlSession sqlSession;
 	
-/*
-	public List<OneToOneVo> findAll() {
-		List<OneToOneVo> list = sqlSession.selectList("onetoone.findAll");
-		
-		return list;
-	}
-*/
-	public List<OneToOneVo> findAll(int page) {
+	public List<OneToOneVo> findAll(int page, String nickname) {
 		int start = 1 + (page-1) * 10; //1, 11, 21, 31
 		int end = page * 10; //10, 20, 30, 40
 		Map params = new HashMap();
 		params.put("start", start);
 		params.put("end", end);
+		params.put("nickname", nickname);
 		
 
 		return sqlSession.selectList("onetoone.findAll", params);
@@ -52,6 +46,15 @@ public class OneToOneRepository {
 
 	public OneToOneVo findOne(String no) {
 		return sqlSession.selectOne("onetoone.findOne", no);
+	}
+
+	public boolean write(OneToOneVo vo) {
+		int result = sqlSession.insert("onetoone.write", vo);
+		if(result == 1) {
+			return true;
+		}else {
+			return false;
+		}
 	}
 
 }

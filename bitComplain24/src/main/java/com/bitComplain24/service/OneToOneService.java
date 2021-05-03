@@ -14,8 +14,8 @@ public class OneToOneService {
 	@Autowired
 	private OneToOneRepository oneToOneRepository; 
 	
-	public List<OneToOneVo> findAll(int page) {
-		return oneToOneRepository.findAll(page);
+	public List<OneToOneVo> findAll(int page, String nickname) {
+		return oneToOneRepository.findAll(page, nickname);
 		
 	}
 	
@@ -27,6 +27,11 @@ public class OneToOneService {
 	public OneToOneVo findOne(String no) {
 
 		return oneToOneRepository.findOne(no);
+	}
+
+	public boolean write(OneToOneVo vo) {
+		return oneToOneRepository.write(vo);
+
 	}
 
 }
