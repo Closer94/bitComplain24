@@ -2,6 +2,8 @@ package com.bitComplain24.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -9,8 +11,10 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.bitComplain24.security.Auth;
 import com.bitComplain24.service.OneToOneService;
 import com.bitComplain24.vo.OneToOneVo;
+import com.bitComplain24.vo.UserVo;
 
 @Controller
 @RequestMapping("/oneToOne")
@@ -19,8 +23,10 @@ public class OneToOneController {
 	@Autowired
 	private OneToOneService oneToOneService;
 	
+	@Auth
 	@RequestMapping("")
 	public String index(Model model) {
+		
 		int page = 1;
 		List<OneToOneVo> list = oneToOneService.findAll(page);
 		model.addAttribute("list", list);
@@ -41,7 +47,6 @@ public class OneToOneController {
 	@RequestMapping("/writeForm")
 	public String writeForm() {
 		
-		
 		return "oneToOne/write";
 	}
 	
@@ -52,8 +57,12 @@ public class OneToOneController {
 		return "redirect:/oneToOne/";
 	}
 	
-	@RequestMapping(value="/detail/{title}/{regdate}")
-	public String detail() {
+	@RequestMapping(value="/detail/{no}")
+	public String detail(@PathVariable("no") String no, Model model) {
+		OneToOneVo vo = oneToOneService.findOne(no);
+		
+		model.addAttribute("vo", vo);
+		
 		return "oneToOne/detail";
 	}
 	

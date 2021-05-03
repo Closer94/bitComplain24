@@ -67,7 +67,7 @@
                 	<c:forEach items="${list }" var="vo" varStatus="status">
 		                <tr style="border-bottom:1px solid #d3d3d3;">
 		                    <td style="text-align:center; padding-left:-5px; width:68px">${vo.no }</td>
-		                    <td><a id = "defaultUp" href="${pageContext.request.contextPath }/oneToOne/detail/title=${vo.title }/regdate=${vo.regdate }">${vo.title }</a></td>
+		                    <td><a id = "defaultUp" href="${pageContext.request.contextPath }/oneToOne/detail/${vo.no }">${vo.title }</a></td>
 		                    <td style="text-align:center;">${vo.writer}</td>
 		                    <td style="text-align:center;">${vo.regdate }</td>
 		                    <td style="text-align:center;"><input id = "btn" type="button" value="수정" onclick="location.href='${pageContext.servletContext.contextPath}/oneToOne/modify'" style="background-color: red;"></td>

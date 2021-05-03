@@ -49,18 +49,18 @@
             <table>
                 <tr><td style="font-size:30px; font-weight: bold; color:#3493ff;">1:1 문의/건의</td></tr>
                 <tr><td style="height:30px;">&nbsp;</td></tr>
-                <tr><td style="font-weight: bold; font-size:25px;">웹 개발자가 되기 위한 서적 추천</td></tr>
-                <tr><td style="border-top:2px solid #2e4361; background:#f1f7ff; padding:10px 0px 10px 0px;">&nbsp;닉네임 : <span style="font-size:13px;">웹고인물</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <tr><td style="font-weight: bold; font-size:25px;">${vo.title }</td></tr>
+                <tr><td style="border-top:2px solid #2e4361; background:#f1f7ff; padding:10px 0px 10px 0px;">&nbsp;닉네임 : <span style="font-size:13px;">${vo.writer }</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    &nbsp;&nbsp;&nbsp;작성일 : <span style="font-size:13px; margin-left:1;">2019.10.29 15:18</span>&nbsp;&nbsp;</td>
+                    &nbsp;&nbsp;&nbsp;작성일 : <span style="font-size:13px; margin-left:1;">${vo.regdate }</span>&nbsp;&nbsp;</td>
                 </tr>
                 <tr><td>&nbsp;</td></tr>
                 <tr><td>&nbsp;</td></tr>
                 <tr name = "contents">
                     <td>
-                       	웹 개발 서적 추천해주세요.
+                       	${fn:replace(vo.content, newline, "<br/>") }
                     </td>
                 </tr>
                 <tr><td>&nbsp;</td></tr>

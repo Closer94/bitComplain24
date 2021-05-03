@@ -3,6 +3,8 @@ package com.bitComplain24.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.bitComplain24.security.Auth;
+
 @Controller
 @RequestMapping("staffEval")
 public class StaffEvalController {
@@ -14,6 +16,7 @@ public class StaffEvalController {
 		return "staffEval/index";
 	}
 	
+	@Auth
 	@RequestMapping("/evalForm")
 	public String evalForm() {
 		

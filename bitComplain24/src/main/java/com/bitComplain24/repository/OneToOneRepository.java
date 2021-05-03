@@ -50,4 +50,8 @@ public class OneToOneRepository {
 		
 	}
 
+	public OneToOneVo findOne(String no) {
+		return sqlSession.selectOne("onetoone.findOne", no);
+	}
+
 }

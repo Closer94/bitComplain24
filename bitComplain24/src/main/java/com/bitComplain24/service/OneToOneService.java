@@ -24,4 +24,9 @@ public class OneToOneService {
 		
 	}
 
+	public OneToOneVo findOne(String no) {
+
+		return oneToOneRepository.findOne(no);
+	}
+
 }

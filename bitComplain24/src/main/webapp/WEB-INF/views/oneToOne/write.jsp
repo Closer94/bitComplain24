@@ -28,7 +28,7 @@
     <header class = "positionHead">
         <table>
             <tr>
-                <td colspan="2" style="width:300px;height:100px;font-size:60px;font-family: 'Jua', sans-serif"><a title="메인페이지로 가기" href="${pageContext.request.contextPath }" style="text-decoration:none;">Bit민원24</a></td>
+                <td colspan="2" style="width:300px;height:100px;font-size:60px;font-family: 'Jua', sans-serif"><a title="메인페이지로 가기" href="${pageContext.servletContext.contextPath }" style="text-decoration:none;">Bit민원24</a></td>
 
                 <td width="600" style="font-size:30px;font-family: 'Jua', sans-serif">만사소통 모두에 의한, 모두를 위한, 모든 소통</td>
                 <td style="width:250px;font-size:15px;text-align:right; height:80px;font-family:'Noto Sans KR', sans-serif;">
@@ -60,22 +60,17 @@
                 <hr>
     <form action="${pageContext.request.contextPath }/oneToOne/write" method="post" name="sub1">
                 <div class="title_line">
-                <label><span class="font_jua" style="margin-right:7.5px";> 제목 </span><input type="text" placeholder="제목을 입력하세요" id="title_text" name="title"></label>
+                <label><span class="font_jua" style="margin-right:7.5px;"> 제목 </span><input type="text" placeholder="제목을 입력하세요" id="title_text" name="title"></label>
                 </div>
                 <div class="main_line">
                     <label>
                         <div id="main_text_word"><span class="font_jua">본문</span></div>
-                        <div id="main_text"> <textarea name="editor1" id="editor1"></textarea>
+                        <div id="main_text"> <textarea name="content" id="editor1"></textarea>
                             <script> CKEDITOR.replace('editor1'); </script>
                         </div>
                     </label>
                 </div>
                 <div class="file_line">                
-                </div>
-                <div class="tag_line">
-                <label>
-                <div style="margin-right : 45px; display:inline-block"> <span class="font_jua">태그 </span></div>
-                <input type="text" placeholder="태그의 구분은 쉼표(,) 최대 5개" id="tag_text"></label>
                 </div>
                 <hr>
                 <div class="final_line">
